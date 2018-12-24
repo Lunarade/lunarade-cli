@@ -20,7 +20,7 @@ function default_1(program, configFileName, configFile) {
         return __awaiter(this, void 0, void 0, function* () {
             let cmd = args.pop();
             let modules = cmd.module;
-            let cwd = __dirname + '/../../../node_modules/@lunarade/platform';
+            let cwd = __dirname + '/../../node_modules/@lunarade/platform';
             if (modules && modules.length)
                 child_process_1.execSync(`npm i ${modules.join(' ')}`, { stdio: 'inherit', cwd });
             if (cmd.daemon)

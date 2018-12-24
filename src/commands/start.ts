@@ -11,7 +11,7 @@ export default function (program: commander.Command, configFileName: string, con
         .action(async function handler(...args) {
             let cmd = args.pop();
             let modules = cmd.module;
-            let cwd = __dirname + '/../../../node_modules/@lunarade/platform';
+            let cwd = __dirname + '/../../node_modules/@lunarade/platform';
 
             if (modules && modules.length)
                 execSync(`npm i ${modules.join(' ')}`, { stdio: 'inherit', cwd });
