@@ -1,0 +1,27 @@
+{
+  "name": "@lunarade/cli",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "bin": {
+    "lunarade": "./bin/cli.js"
+  },
+  "scripts": {
+    "dev": "tsc -w --declaration",
+    "build": "tsc --declaration",
+    "patch": "git add --all && git commit -m Changes && npm version patch && git push",
+    "minor": "git add --all && git commit -m Changes && npm version minor && git push",
+    "major": "git add --all && git commit -m Changes && npm version major && git push"
+  },
+  "dependencies": {
+    "@lunarade/platform": "^1.0.0",
+    "@types/chalk": "^2.2.0",
+    "@types/node": "^7.0.51",
+    "chalk": "^2.4.1",
+    "commander": "^2.14.1",
+    "forever": "^0.15.3",
+    "inquirer": "^1.1.2",
+    "npm": "^5.6.0",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
