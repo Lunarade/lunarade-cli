@@ -28,6 +28,7 @@ program.usage('<command> [options]');
 program.version(_package.version);
 require('./commands/config').default(program, configFileName, configFile);
 require('./commands/start').default(program, configFileName, configFile);
+require('./commands/update').default(program, configFileName, configFile);
 program.parse(process.argv);
 if (!process.argv[2])
     console.log(`🌚 Lunarade CLI v${_package.version}`);

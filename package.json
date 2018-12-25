@@ -8,9 +8,9 @@
   "scripts": {
     "dev": "tsc -w --declaration",
     "build": "tsc --declaration",
-    "patch": "git add --all && git commit -m Changes && npm version patch && git push",
-    "minor": "git add --all && git commit -m Changes && npm version minor && git push",
-    "major": "git add --all && git commit -m Changes && npm version major && git push"
+    "patch": "git add --all && git commit -m Changes --allow-empty && npm version patch && git push",
+    "minor": "git add --all && git commit -m Changes --allow-empty && npm version minor && git push",
+    "major": "git add --all && git commit -m Changes --allow-empty && npm version major && git push"
   },
   "dependencies": {
     "@lunarade/platform": "^1.0.0",

@@ -15,7 +15,6 @@ Object.defineProperty(Object.prototype, 'getQuestion', {
   }
 });
 
-
 import * as fs from 'fs';
 import * as program from 'commander';
 import chalk from 'chalk';
@@ -34,6 +33,7 @@ program.version(_package.version);
 
 require('./commands/config').default(program, configFileName, configFile);
 require('./commands/start').default(program, configFileName, configFile);
+require('./commands/update').default(program, configFileName, configFile);
 
 program.parse(process.argv);
 
