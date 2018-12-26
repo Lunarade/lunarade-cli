@@ -1,5 +1,6 @@
 import * as commander from 'commander';
 import { execSync } from 'child_process';
+import { existsSync } from 'fs';
 
 export default function (program: commander.Command, configFileName: string, configFile: any) {
     program
@@ -12,6 +13,11 @@ export default function (program: commander.Command, configFileName: string, con
             let cmd = args.pop();
             let modules = cmd.module;
             let cwd = __dirname + '/../../node_modules/@lunarade/platform';
+
+            if (existsSync(cwd + '/node_modules/@lunarade')) {
+                console.log('Preparing...');
+                execSync('npm i', { stdio: 'inherit', cwd });
+            }
 
             if (modules && modules.length)
                 execSync(`npm i ${modules.join(' ')}`, { stdio: 'inherit', cwd });

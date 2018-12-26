@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const child_process_1 = require("child_process");
+const fs_1 = require("fs");
 function default_1(program, configFileName, configFile) {
     program
         .command('start')
@@ -21,6 +22,10 @@ function default_1(program, configFileName, configFile) {
             let cmd = args.pop();
             let modules = cmd.module;
             let cwd = __dirname + '/../../node_modules/@lunarade/platform';
+            if (fs_1.existsSync(cwd + '/node_modules/@lunarade')) {
+                console.log('Preparing...');
+                child_process_1.execSync('npm i', { stdio: 'inherit', cwd });
+            }
             if (modules && modules.length)
                 child_process_1.execSync(`npm i ${modules.join(' ')}`, { stdio: 'inherit', cwd });
             if (cmd.daemon)
