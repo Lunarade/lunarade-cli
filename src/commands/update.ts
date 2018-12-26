@@ -9,6 +9,7 @@ export default function (program: commander.Command, configFileName: string, con
         .action(async function handler() {
             let cwd = __dirname + '/../..';
             execSync(`npm i @lunarade/platform@latest`, { stdio: 'inherit', cwd });
+            execSync(`npm i`, { stdio: 'inherit', cwd: cwd + '/node_modules/@lunarade/platform' });
         });
 }
 

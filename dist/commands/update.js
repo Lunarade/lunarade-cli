@@ -18,6 +18,7 @@ function default_1(program, configFileName, configFile) {
         return __awaiter(this, void 0, void 0, function* () {
             let cwd = __dirname + '/../..';
             child_process_1.execSync(`npm i @lunarade/platform@latest`, { stdio: 'inherit', cwd });
+            child_process_1.execSync(`npm i`, { stdio: 'inherit', cwd: cwd + '/node_modules/@lunarade/platform' });
         });
     });
 }
