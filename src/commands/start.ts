@@ -14,7 +14,7 @@ export default function (program: commander.Command, configFileName: string, con
             let modules = cmd.module;
             let cwd = __dirname + '/../../node_modules/@lunarade/platform';
 
-            if (existsSync(cwd + '/node_modules/@lunarade')) {
+            if (!existsSync(cwd + '/node_modules/@lunarade')) {
                 console.log('Preparing...');
                 execSync('npm i', { stdio: 'inherit', cwd });
             }

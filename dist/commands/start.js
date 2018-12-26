@@ -22,7 +22,7 @@ function default_1(program, configFileName, configFile) {
             let cmd = args.pop();
             let modules = cmd.module;
             let cwd = __dirname + '/../../node_modules/@lunarade/platform';
-            if (fs_1.existsSync(cwd + '/node_modules/@lunarade')) {
+            if (!fs_1.existsSync(cwd + '/node_modules/@lunarade')) {
                 console.log('Preparing...');
                 child_process_1.execSync('npm i', { stdio: 'inherit', cwd });
             }
