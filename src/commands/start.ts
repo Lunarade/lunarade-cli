@@ -19,8 +19,10 @@ export default function (program: commander.Command, configFileName: string, con
                 execSync('npm i', { stdio: 'inherit', cwd });
             }
 
-            if (modules && modules.length)
+            if (modules && modules.length) {
                 execSync(`npm i ${modules.join(' ')}`, { stdio: 'inherit', cwd });
+                execSync(`npm rebuild node-sass`, { stdio: 'inherit', cwd });
+            }
 
             if (cmd.daemon)
                 execSync('"../../../.bin/forever" start main.js', { stdio: 'inherit', cwd: cwd + '/dist' });

@@ -10,7 +10,10 @@
     "build": "tsc --declaration",
     "patch": "tsc && git add --all && git commit -m Changes --allow-empty && npm version patch && git push",
     "minor": "tsc && git add --all && git commit -m Changes --allow-empty && npm version minor && git push",
-    "major": "tsc && git add --all && git commit -m Changes --allow-empty && npm version major && git push"
+    "major": "tsc && git add --all && git commit -m Changes --allow-empty && npm version major && git push",
+    "publish-patch": "tsc && git add --all && git commit -m Changes --allow-empty && npm version patch && git push && npm publish .",
+    "publish-minor": "tsc && git add --all && git commit -m Changes --allow-empty && npm version minor && git push && npm publish .",
+    "publish-major": "tsc && git add --all && git commit -m Changes --allow-empty && npm version major && git push && npm publish ."
   },
   "dependencies": {
     "@lunarade/platform": "^1.0.0",

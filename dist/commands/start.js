@@ -26,8 +26,10 @@ function default_1(program, configFileName, configFile) {
                 console.log('Preparing...');
                 child_process_1.execSync('npm i', { stdio: 'inherit', cwd });
             }
-            if (modules && modules.length)
+            if (modules && modules.length) {
                 child_process_1.execSync(`npm i ${modules.join(' ')}`, { stdio: 'inherit', cwd });
+                child_process_1.execSync(`npm rebuild node-sass`, { stdio: 'inherit', cwd });
+            }
             if (cmd.daemon)
                 child_process_1.execSync('"../../../.bin/forever" start main.js', { stdio: 'inherit', cwd: cwd + '/dist' });
             else
