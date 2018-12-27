@@ -1,6 +1,6 @@
 {
   "name": "@lunarade/cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "./dist/index.js",
   "bin": {
     "lunarade": "./bin/cli.js"
